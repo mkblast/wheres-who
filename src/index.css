@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sigmar+One&display=swap');
+
+:root {
+  --bg: #100a19;
+  --fg: #d3cbe2;
+  --1: #1a1226;
+  --2: #241a34;
+  --3: #37294d;
+  --4: #513e6f;
+  --5: #72589c;
+  --6: #9480b8;
+  --7: #b9add2;
+  --8: #e5e0ee;
+  --9: #6ac8e4;
+  --10: #e9a5c5;
+  --11: #f2cdde;
+  --12: #d1c7e6;
+  --13: #e990bc;
+  --14: #5bc3a1;
+  --15: #a2b75d;
+  --16: #78d6f3
+}
+
+* {
+  font-family: "Sigmar One", Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}

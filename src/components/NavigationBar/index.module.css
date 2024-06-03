@@ -1,0 +1,64 @@
+/* CSS HEX */
+.nav {
+  color: var(--fg);
+  background-color: var(--bg);
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.titleLink:link,
+.titleLink:visited {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.link {
+  background: #A30036;
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  outline-offset: 4px;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.link:active .option {
+  transform: translateY(-2px);
+}
+
+.options {
+  font-size: 0.5em;
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  transform: translateY(2em);
+}
+
+.option {
+  margin-top: -1em;
+  display: block;
+  padding: 6px 21px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: #f0003c;
+  transform: translateY(-6px);
+}
+
+@media (max-width: 620px) {
+  .nav {
+    justify-content: center;
+  }
+}
