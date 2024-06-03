@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavigationBar from "../NavigationBar";
 import Styles from "./index.module.css";
+import ClickMenu from "./ClickMenu";
 
 function formatTime(seconds, minutes) {
   let formated = "";
@@ -17,6 +18,7 @@ function Level() {
   const [time, setTime] = useState("00:00");
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [position, setPosition] = useState();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -44,11 +46,21 @@ function Level() {
     })();
   }, [id]);
 
+  function handleClick(e) {
+    return setPosition(prev => (
+      prev ?
+        null
+        :
+        { top: e.clientY, left: e.clientX }
+    ));
+  }
+
   return (
     <>
       <NavigationBar />
+      <ClickMenu position={position} />
       <h1 className={Styles.time}>{time}</h1>
-      <div className={Styles.container}>
+      <div className={Styles.container} onClick={handleClick}>
         <img src={img} alt="" className={Styles.img} />
       </div>
     </>
