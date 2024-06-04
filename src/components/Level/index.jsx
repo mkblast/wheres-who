@@ -32,13 +32,13 @@ function Level() {
 
       const name = prompt("Enter you Name:");
 
-      const res = await fetch(`http://localhost:3000/api/leaderboard/${id}`, {
+      const res = await fetch(`https://wheres-who.glitch.me/api/leaderboard/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
+          name: name,
           record: seconds,
         })
       });
