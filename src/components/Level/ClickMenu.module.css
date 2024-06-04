@@ -1,4 +1,23 @@
 .menu {
   background-color: var(--2);
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--3) 0px 5px 10px;
+  border: solid 1px var(--9);
+  border-radius: 15px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+.icon:first-child {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.icon:last-child {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }

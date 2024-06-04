@@ -1,6 +1,6 @@
-import image1 from "./../../assets/1-small.jpg";
-import image2 from "./../../assets/2-small.jpg";
-import image3 from "./../../assets/3-small.jpg";
+import image1 from "./../../assets/levels/1/small.jpg";
+import image2 from "./../../assets/levels/2/small.jpg";
+import image3 from "./../../assets/levels/3/small.jpg";
 import Styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "../NavigationBar";

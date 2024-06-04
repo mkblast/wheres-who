@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavigationBar from "../NavigationBar";
 import Styles from "./index.module.css";
@@ -21,6 +21,13 @@ function Level() {
   const [position, setPosition] = useState();
 
   useEffect(() => {
+    (async () => {
+      const img = await import(`../../assets/levels/${id}/original.jpg`);
+      setImg(img.default);
+    })();
+  }, [id]);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       const formated = formatTime(seconds, minutes);
       setTime(formated);
@@ -38,13 +45,6 @@ function Level() {
       clearInterval(timer);
     };
   }, [minutes, seconds, time]);
-
-  useEffect(() => {
-    (async () => {
-      const img = await import(`../../assets/${id}.jpg`);
-      setImg(img.default);
-    })();
-  }, [id]);
 
   function handleClick(e) {
     return setPosition(prev => (
