@@ -1,0 +1,51 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 26, 52, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs>input {
+  background-color: var(--2);
+  color: var(--fg);
+  border: solid var(--2);
+  border-radius: 5px;
+  box-shadow: var(--3) 0px 5px 10px;
+  outline: none;
+}
+
+.inputs>input:focus-visible {
+  border: solid var(--4);
+}
+
+.inputs>button {
+  outline: none;
+  color: var(--fg);
+  border-radius: 5px;
+  border: solid 1px var(--6);
+  background-color: var(--5);
+}
+
+.error {
+  height: 2em;
+  color: var(--13);
+  font-size: 0.8em;
+}

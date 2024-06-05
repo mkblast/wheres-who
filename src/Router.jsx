@@ -2,6 +2,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./ErrorPage";
 import Level from "./components/Level";
+import Leaderboard from "./components/Leaderboard";
+
 function Router() {
   const router = createBrowserRouter([
     {
@@ -12,6 +14,11 @@ function Router() {
     {
       path: "/levels/:id",
       element: <Level />,
+      errorElement: <ErrorPage />
+    },
+    {
+      path: "/leaderboard",
+      element: <Leaderboard />,
       errorElement: <ErrorPage />
     }
   ]);

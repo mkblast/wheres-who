@@ -4,7 +4,7 @@ import NavigationBar from "../NavigationBar";
 import Styles from "./index.module.css";
 import ClickMenu from "./ClickMenu";
 import { formatTime } from "../../utiles";
-import { useNavigate } from "react-router-dom";
+import InputMenu from "./InputMenu";
 
 function Level() {
   const { id } = useParams();
@@ -14,7 +14,6 @@ function Level() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [win, setWin] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -22,38 +21,6 @@ function Level() {
       setImg(img.default);
     })();
   }, [id]);
-
-  useEffect(() => {
-    (async () => {
-
-      if (!win) {
-        return;
-      }
-
-      const name = prompt("Enter you Name:");
-
-      const res = await fetch(`https://wheres-who.glitch.me/api/leaderboard/${id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          record: seconds,
-        })
-      });
-
-      const json = await res.json();
-
-      if (!res.ok) {
-        console.log(json);
-        return;
-      }
-
-      console.log(json);
-      navigate("/");
-    })();
-  });
 
   useEffect(() => {
     if (win) {
@@ -117,6 +84,7 @@ function Level() {
           }}
         />
       </div>
+      <InputMenu win={win} seconds={seconds} />
     </>
   );
 }
