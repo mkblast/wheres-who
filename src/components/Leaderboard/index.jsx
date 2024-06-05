@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Styles from "./index.module.css";
 import NavigationBar from "../NavigationBar";
 import Footer from "../Footer";
+import { formatTime } from "../../utiles";
 
 function Leaderboard() {
   const [levels, setLevels] = useState([]);
@@ -31,7 +32,7 @@ function Leaderboard() {
               {level.map(rec => (
                 <div key={rec._id} className={Styles.record}>
                   <p>{rec.name}:</p>
-                  <p>{rec.record}</p>
+                  <p>{formatTime(rec.record)}</p>
                 </div>
               ))}
             </div>
