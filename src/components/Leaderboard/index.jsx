@@ -8,7 +8,7 @@ function Leaderboard() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("http://localhost:3000/api/leaderboard/");
+      const res = await fetch("https://wheres-who.glitch.me/api/leaderboard/");
       const json = await res.json();
 
       setLevels([
