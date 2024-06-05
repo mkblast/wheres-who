@@ -4,6 +4,7 @@ import image3 from "./../../assets/levels/3/small.jpg";
 import Styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import NavigationBar from "../NavigationBar";
+import Footer from "../Footer";
 
 function Home() {
   return (
@@ -29,6 +30,7 @@ function Home() {
           <h2>LeveL 3</h2>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

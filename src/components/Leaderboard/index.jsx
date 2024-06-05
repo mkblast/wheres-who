@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Styles from "./index.module.css";
 import NavigationBar from "../NavigationBar";
+import Footer from "../Footer";
 
 function Leaderboard() {
   const [levels, setLevels] = useState([]);
@@ -37,6 +38,7 @@ function Leaderboard() {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }

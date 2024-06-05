@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Styles from "./ClickMenu.module.css";
 import PropTypes from 'prop-types';
 
-function ClickMenu({ position, setPosition, x, y, setWin }) {
+function ClickMenu({ position, setPosition, x, y, setWin, setMissed }) {
   const { id } = useParams();
   const [characters, setCharacter] = useState([]);
 
@@ -43,7 +43,7 @@ function ClickMenu({ position, setPosition, x, y, setWin }) {
     const json = await res.json();
 
     if (!res.ok) {
-      console.log(json);
+      setMissed(true);
       return;
     }
 
@@ -89,6 +89,7 @@ ClickMenu.propTypes = {
   x: PropTypes.number,
   y: PropTypes.number,
   setWin: PropTypes.func,
+  setMissed: PropTypes.func,
 };
 
 export default ClickMenu;

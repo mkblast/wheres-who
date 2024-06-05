@@ -5,6 +5,8 @@ import Styles from "./index.module.css";
 import ClickMenu from "./ClickMenu";
 import { formatTime } from "../../utiles";
 import InputMenu from "./InputMenu";
+import MissToast from "./MissToast";
+import Footer from "../Footer";
 
 function Level() {
   const { id } = useParams();
@@ -13,6 +15,7 @@ function Level() {
   const [position, setPosition] = useState();
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const [missed, setMissed] = useState(false);
   const [win, setWin] = useState(false);
 
   useEffect(() => {
@@ -72,6 +75,7 @@ function Level() {
         setPosition={setPosition}
         x={x}
         y={y}
+        setMissed={setMissed}
         setWin={setWin} />
       <h1 className={Styles.time}>{formatTime(seconds)}</h1>
       <div className={Styles.container} >
@@ -84,7 +88,9 @@ function Level() {
           }}
         />
       </div>
+      <MissToast missed={missed} setMissed={setMissed} />
       <InputMenu win={win} seconds={seconds} />
+      <Footer />
     </>
   );
 }
